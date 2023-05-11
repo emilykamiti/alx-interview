@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-
-"""This module contains a script that reads stdin line by line and computes metrics
 """
-
+module contains a script that reads stdin line by line and computes metrics
+"""
 import sys
+
 
 status_codes = {
     "200": 0,
@@ -17,7 +17,6 @@ status_codes = {
 }
 
 file_size = 0
-
 
 
 def print_metrics():
