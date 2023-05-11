@@ -18,7 +18,7 @@ file_size = 0
 
 
 def print_metrics():
-   
+    """log prints"""
     print("File size: {}".format(file_size))
     for status in sorted(status_codes.keys()):
         if status_codes[status]:
