@@ -1,1 +1,1 @@
-queens
+Solving a chess puzzle
