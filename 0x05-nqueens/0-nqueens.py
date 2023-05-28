@@ -1,12 +1,21 @@
 #!/usr/bin/python
-"""Solves the N Queens puzzle for NxN chessboord"""
+"""Solves the N-queens puzzle.
+Determines all possible solutions to placing N
+N non-attacking queens on an NxN chessboard."""
 
 import sys
 
 
 def board_set_up(N):
     """
-    Sets up blank NxN chessboard"""
+    Sets up blank NxN chessboard
+
+    parameters:
+        N [int]: represents the size of the board
+
+    board is initialized to 0s
+    """
+    matrix = []
     matrix = []
     for row in range(N):
         matrix_row = []
@@ -17,8 +26,15 @@ def board_set_up(N):
 
 
 def print_solution(matrix):
-    """Prints the coordinates where there is a queen"""
+    """
+    Prints the coordinates where there is a queen
 
+    parameters:
+        matrix [list of lists]: represents the NxN chessboard
+
+    queens indicated by 1 in matrix
+    coordinates printed as list of lists
+    """
     queens_coordinates = []
     for i, row in enumerate(matrix):
         for j, column in enumerate(row):
@@ -31,7 +47,14 @@ def print_solution(matrix):
 
 
 def is_safe(matrix, new_row, new_column):
-    """Determines if the queen is safe to be put in a new row or colomn"""
+    """
+    Determines if a queen is safe to be put in new_row, new_column
+
+    parameters:
+        matrix [list of lists]: represents the NxN chessboard
+        new_row [int]: row coordinate for potential new queen
+        new_column [int]: column coordinate for potential new queen
+    """
     # checks row up to column
     for i in range(new_column):
         if matrix[new_row][i]:
@@ -51,6 +74,13 @@ def is_safe(matrix, new_row, new_column):
 
 
 def solve(matrix, new_column):
+    """
+    Recursively solves the N Queens puzzle
+
+    parameters:
+        matrix [list of lists]: represents NxN chessboard
+        new_column [int]: column to test for new queen
+    """
     N = len(matrix)
     # base case: all queens are placed
     if new_column >= N:
