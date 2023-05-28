@@ -1,5 +1,4 @@
-#!usr/bin/python3
-#Author: Kamiti Emily
+#!/usr/bin/python3
 
 """
 N-Queens Puzzle Solver
@@ -86,3 +85,4 @@ if __name__ == "__main__":
 
     chessboard = initialize_board(N)
     solve_n_queens(chessboard, 0)
+
