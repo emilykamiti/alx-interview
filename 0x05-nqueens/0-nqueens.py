@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 """
-N-Queens Puzzle Solver
-This program's aim is to solve the N-Queens puzzle, which mainly involves placing N queen on the NxN chessboard in such a way that no two queens attack each other.
+N-Queens Puzzle Solver. This program's aim is to solve the N-Queens puzzle, which mainly involves placing N queen on the NxN chessboard in such a way that no two queens attack each other.
 """
 
 import sys
@@ -77,10 +76,12 @@ if __name__ == "__main__":
         N = int(N)
     except Exception as e:
         print("N must be a number")
+
         exit(1)
 
     if N < 4 :
         print("N must Be atleast 4")
+
         exit(1)
 
     chessboard = initialize_board(N)
