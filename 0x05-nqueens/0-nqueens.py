@@ -11,7 +11,7 @@ import sys
 
 def initialize_board(N):
     """
-    Initializes an empty chessboard of size NxN
+    Initializes an empty chessboard of size NxN.
     """
     board = []
     for _ in range(N):
@@ -22,7 +22,7 @@ def initialize_board(N):
 
 def print_queens_coordinates(board):
     """
-    Prints the coordinates of the queens on the dashboard
+    Prints the coordinates of the queens on the dashboard.
     """
     queens_coordinates = []
     for row in range(len(board)):
@@ -36,23 +36,23 @@ def print_queens_coordinates(board):
 def is_safe(board, row, column):
 
     """
-    This checks if placing a queen at a given position is safe
+    This checks if placing a queen at a given position is safe.
     """
     N = len(board)
 
 
-    # Checks the row to the left side of the current column
+    # Checks the row to the left side of the current column.
     for i in range(column):
         if board[row][i] == 1:
             return False
 
 
-    # Checks for the upper diagonal
+    # Checks for the upper diagonal.
     for i, j in zip(range(row, -1, -1), range(column, -1, -1)):
         if board[i][j] == 1:
             return False
 
-    # checks for the lower diagonal
+    # checks for the lower diagonal.
     for i, j in zip(range(row, N, 1), range(column, -1, -1)):
         if board[i][j] == 1:
             return False
