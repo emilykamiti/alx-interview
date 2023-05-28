@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 """
-N-Queens Puzzle Solver. This program's aim is to solve the N-Queens puzzle, which mainly involves placing N queen on the NxN chessboard in such a way that no two queens attack each other.
+N-Queens Puzzle Solver. 
+This program's aim is to solve the N-Queens puzzle,
+which mainly involves placing N queen on the NxN chessboard in such a way that no two queens attack each other.
 """
 
 import sys
@@ -74,7 +76,7 @@ def solve_n_queens(board, column):
             board[row][column] = 1
             solve_n_queens(board, column + 1)
             board[row][column] = 0
-
+    return None
 
 
 if __name__ == "__main__":
