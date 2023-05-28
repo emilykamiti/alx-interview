@@ -69,7 +69,7 @@ def solve_n_queens(board, column):
 if __name__ == "__main__":
     if len(sys.argv) !=2:
         print("Usage: nqueens N")
-        exit(1)
+        sys.exit(1)
 
     N = sys.argv[1]
     try:
@@ -77,12 +77,12 @@ if __name__ == "__main__":
     except Exception as e:
         print("N must be a number")
 
-        exit(1)
+        sys.exit(1)
 
     if N < 4 :
         print("N must Be atleast 4")
 
-        exit(1)
+        sys.exit(1)
 
     chessboard = initialize_board(N)
     solve_n_queens(chessboard, 0)
