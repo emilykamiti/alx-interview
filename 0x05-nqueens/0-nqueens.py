@@ -12,7 +12,7 @@ import sys
 
 def initialize_board(N):
     """
-    initializes an empty chessboard of size NxN
+    Initializes an empty chessboard of size NxN
     """
     board = []
     for _ in range(N):
@@ -42,18 +42,18 @@ def is_safe(board, row, column):
     N = len(board)
 
 
-    #Checks the row to the left side of the current column
+    # Checks the row to the left side of the current column
     for i in range(column):
         if board[row][i] == 1:
             return False
 
 
-    #Checks for the upper diagonal
+    # Checks for the upper diagonal
     for i, j in zip(range(row, -1, -1), range(column, -1, -1)):
         if board[i][j] == 1:
             return False
 
-    #checks for the lower diagonal
+    # checks for the lower diagonal
     for i, j in zip(range(row, N, 1), range(column, -1, -1)):
         if board[i][j] == 1:
             return False
@@ -63,7 +63,7 @@ def is_safe(board, row, column):
 
 def solve_n_queens(board, column):
     """
-    using backtracking, recursively solves the N-Queen Puzzle.
+    Using backtracking, recursively solves the N-Queen Puzzle.
     """
     N = len(board)
 
