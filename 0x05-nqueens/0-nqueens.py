@@ -6,6 +6,8 @@ N-Queens Puzzle Solver. This program's aim is to solve the N-Queens puzzle, whic
 
 import sys
 
+
+
 def initialize_board(N):
     """
     initializes an empty chessboard of size NxN
@@ -15,6 +17,7 @@ def initialize_board(N):
        row = [0] * N
        board.append(row)
     return board
+
 
 def print_queens_coordinates(board):
     """
@@ -27,6 +30,8 @@ def print_queens_coordinates(board):
                 queens_coordinates.append((row, column))
     print(queens_coordinates)
 
+
+
 def is_safe(board, row, column):
 
     """
@@ -34,10 +39,12 @@ def is_safe(board, row, column):
     """
     N = len(board)
 
+
     #Checks the row to the left side of the current column
     for i in range(column):
         if board[row][i] == 1:
             return False
+
 
     #Checks for the upper diagonal
     for i, j in zip(range(row, -1, -1), range(column, -1, -1)):
@@ -49,6 +56,8 @@ def is_safe(board, row, column):
         if board[i][j] == 1:
             return False
     return True
+
+
 
 def solve_n_queens(board, column):
     """
@@ -66,6 +75,8 @@ def solve_n_queens(board, column):
             solve_n_queens(board, column + 1)
             board[row][column] = 0
 
+
+
 if __name__ == "__main__":
     if len(sys.argv) !=2:
         print("Usage: nqueens N")
@@ -74,15 +85,15 @@ if __name__ == "__main__":
     N = sys.argv[1]
     try:
         N = int(N)
-    except Exception as e:
+    except ValueError:
         print("N must be a number")
-
         sys.exit(1)
+
 
     if N < 4 :
         print("N must Be atleast 4")
-
         sys.exit(1)
+
 
     chessboard = initialize_board(N)
     solve_n_queens(chessboard, 0)
