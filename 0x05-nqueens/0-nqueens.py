@@ -86,12 +86,12 @@ if __name__ == "__main__":
     try:
         N = int(N)
     except ValueError:
-        print("N must be a number")
+        print("N must be a number\n", end='')
         sys.exit(1)
 
 
     if N < 4 :
-        print("N must Be atleast 4")
+        print("N must Be atleast 4\n", end='')
         sys.exit(1)
 
 
