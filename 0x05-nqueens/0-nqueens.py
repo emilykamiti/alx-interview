@@ -98,3 +98,4 @@ if __name__ == "__main__":
 
     chessboard = initialize_board(N)
     solve_n_queens(chessboard, 0)
+
