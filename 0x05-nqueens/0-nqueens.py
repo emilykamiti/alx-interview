@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 N-Queens Puzzle Solver. 
 This program's aim is to solve the N-Queens puzzle,
