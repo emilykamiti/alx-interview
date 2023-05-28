@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 """
 Program that solves the N queen problem
 """
@@ -14,8 +14,8 @@ def is_safe(board, row, col):
     for i in range(row):
         if(
             board[i] == col 
-            or board[i] - i == col - row 
-            or board[i] + i == col + row
+            or board[i][1] - board[i][0] == col - row 
+            or board[i][1] + board[i][0]== col + row
          ):
 
   	    return False
