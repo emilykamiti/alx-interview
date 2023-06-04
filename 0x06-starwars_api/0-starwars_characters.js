@@ -12,7 +12,7 @@ request.get(URL, (err, response, body) => {
       console.log(err);
     } else if (response.statusCode === 200) {
       const film = JSON.parse(body);
-      const characterPromises = film.characters.map(characterURL) =>
+      const characterPromises = film.characters.map(characterURL =>
         new Promise((resolve, reject) => {
           request.get(characterURL, (err, response, body) => {
             if (err) {
