@@ -7,7 +7,7 @@ const request = require('request');
 const movieId = process.argv[2];
 const URL = `https://swapi.dev/api/films/${movieId}/`;
 
-request.get(URL, (err, response, body) => {
+request.get(URL, async(err, response, body) => {
     if (err) {
       console.log(err)
     } else if (response.statusCode === 200) {
