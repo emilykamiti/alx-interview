@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 // Start Wars Movie Characters Script
 // The movie ID is passed as the first position argument.
 
@@ -23,7 +22,7 @@ request.get(url, (err, response, body) => {
                resolve(character.name);
              } else {
                reject(new Error('request failed with status code ${response.statusCode}'));
-               }
+             }
         });
       })
     );
