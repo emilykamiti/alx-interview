@@ -8,28 +8,28 @@ const movieId = process.argv[2];
 const URL = `https://swapi.dev/api/films/${movieId}/`;
 
 request.get(URL, (err, response, body) => {
-    if (err) {
-      console.log(err);
-    } else if (response.statusCode === 200) {
-      const film = JSON.parse(body);
-      const characterPromises = film.characters.map(characterURL =>
-        new Promise((resolve, reject) => {
-          request.get(characterURL, (err, response, body) => {
-            if (err) {
-              reject(err);
-             } else if (response.statusCode === 200) {
-               const character = JSON.parse(body);
-               resolve(character.name);
-             } else {
-               reject(new Error(`request failed with status code ${response.statusCode}`));
-             }
+  if (err) {
+    console.log(err);
+  } else if (response.statusCode === 200) {
+    const film = JSON.parse(body);
+    const characterPromises = film.characters.map(characterURL =>
+      new Promise((resolve, reject) => {
+        request.get(characterURL, (err, response, body) => {
+          if (err) {
+            reject(err);
+          } else if (response.statusCode === 200) {
+            const character = JSON.parse(body);
+            resolve(character.name);
+          } else {
+            reject(new Error(`request failed with status code ${response.statusCode}`));
+          }
         });
       })
     );
 
-// Wait for all promises to resolve, then print the character names
+    // Wait for all promises to resolve, then print the character names
 
-       Promise.all(characterPromises)
+    Promise.all(characterPromises)
       .then(characterNames => {
         characterNames.forEach(name => console.log(name));
       })
