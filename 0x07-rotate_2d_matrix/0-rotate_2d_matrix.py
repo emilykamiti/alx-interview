@@ -3,23 +3,24 @@
 
 def rotate_2d_matrix(matrix):
     """
-    Rotate a @D matrix 90 degrees clockwise in-place.
+    Rotate a 2D matrix 90 degrees clockwise in-place.
 
     Args:
         matrix (list[List]): The 2D natrix to rotate
     """
-    n = len(matrix)
-    #Transpose the matrix
-    for i in range(n):
-        for j in range(i + 1, n):
-            matrix[i][j], matrix[j][i] =  matrix[j][i], matrix[i][j]
+    n = len(matrix) # Save the original size of the matrix
+    
+    matrix_copy = []
+    copy_row = 0
+    for column in range(n):
+        for row in range(n - 1, -1, -1):
 
-    for i in range(n):
-        matrix[i] = matrix[i][::-1]
-if __name__ == "__main__":
-    matrix = [[1, 2, 3],
-              [4, 5, 6],
-              [7, 8, 9]]
+            if column == 0:
+                matrix_copy.append([])
+            matrix_copy[copy_row].append(matrix[row][column])
+        copy_row += 1
 
-    rotate_2d_matrix(matrix)
-    print(matrix)
+   
+    for row in range(n): # Copy the rotated elements back to the original matrix.
+        for column in range(n):
+            matrix[row][column] = matrix_copy[row][column]
