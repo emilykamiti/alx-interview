@@ -30,6 +30,8 @@ def rotate_2d_matrix(matrix):
     Raises:
         ValueError: If the input is not a valid 2d matrix.
     """
+    if not matrix or not all(len(row) == len(matrix[0]) for row in matrix):
+        raise ValueError("Input is not a valid 2D matrix.")
 
     left, right = 0, len(matrix) - 1
 
