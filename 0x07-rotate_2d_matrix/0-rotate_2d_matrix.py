@@ -1,24 +1,52 @@
 #!/usr/bin/python3
-'''2D matrix'''
+"""
+2D Matrixix Rotatition
+This script rotatets a 2D matrix 90 degrees clockwise.
 
+Example Usage:
+    matrix = [
+        [1, 2, 3],
+        [4, 5, 6]'
+        [7, 8, 9]
+    ]
+    rotate_2d_matrix(matrix)
+    print(matrix)
+
+Author: Kamiti Emily
+"""
 
 def rotate_2d_matrix(matrix):
-    '''rotates a 2d matrix 90° clockwise
-    Returns: Nothing'''
+    """
+    Rotate a 2D matrix 90 degrees clockwise.
+
+    Args:
+       matrix (list): The 2D matrix to be rotated in place.
+
+    Returns:
+        None: The function modifies the original matrix in place.
+
+    Raises:
+        ValueError: If the input is not a valid 2D matrix.
+    """
+
+    if not matrix or not all(len(row)) == len(matrix[0]) for row in matrix):
+        raise ValueError("Input is not a valid 2D matrix.")
+
     left, right = 0, len(matrix) - 1
 
     while left < right:
         for i in range(right - left):
             top, bottom = left, right
-            # save topleft  value
+            # Save the value of the top left element in a temporary variable 'topleft'
             topLeft = matrix[top][left + i]
-            # move bottom left to top left
+            # Move the bottom Left to the top left position
             matrix[top][left + i] = matrix[bottom - i][left]
-            # move bottom right to bottom left
+            # Move bottom right element to bottom left position
             matrix[bottom - i][left] = matrix[bottom][right - i]
-            # move top right to bottom right
-            matrix[bottom][right - i] = matrix[top + i][right]
-            # move top left to top right
-            matrix[top + i][right] = topLeft
+            # Move top right element to the bottom right position
+            matrix[bottom][right- i] = matrix[top + i][right]
+            # Move top left element to the top right position
+            matrix[top + i][right] = topleft
+        
         right -= 1
         left += 1
