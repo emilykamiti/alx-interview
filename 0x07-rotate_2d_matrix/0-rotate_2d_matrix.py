@@ -29,7 +29,7 @@ def rotate_2d_matrix(matrix):
         ValueError: If the input is not a valid 2D matrix.
     """
 
-    if not matrix or not all(len(row)) == len(matrix[0]) for row in matrix):
+    if not matrix or not all(len(row) == len(matrix[0]) for row in matrix):
         raise ValueError("Input is not a valid 2D matrix.")
 
     left, right = 0, len(matrix) - 1
@@ -46,7 +46,7 @@ def rotate_2d_matrix(matrix):
             # Move top right element to the bottom right position
             matrix[bottom][right- i] = matrix[top + i][right]
             # Move top left element to the top right position
-            matrix[top + i][right] = topleft
+            matrix[top + i][right] = topLeft
         
         right -= 1
         left += 1
