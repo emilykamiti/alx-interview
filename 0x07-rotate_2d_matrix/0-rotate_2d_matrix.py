@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-2D Matrixix Rotatition
+2D Matrix Rotation
 This script rotatets a 2D matrix 90 degrees clockwise.
 
 Example Usage:
     matrix = [
         [1, 2, 3],
-        [4, 5, 6]'
+        [4, 5, 6],
         [7, 8, 9]
     ]
     rotate_2d_matrix(matrix)
@@ -47,6 +47,6 @@ def rotate_2d_matrix(matrix):
             matrix[bottom][right- i] = matrix[top + i][right]
             # Move top left element to the top right position
             matrix[top + i][right] = topLeft
-        
+
         right -= 1
         left += 1
