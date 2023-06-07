@@ -39,7 +39,7 @@ def rotate_2d_matrix(matrix):
     while left < right:
         for i in range(right - left):
             top, bottom = left, right
-            # Save the value of the top left element in a temporary variable 'topleft'
+            # Save the value of the top left element in a temporary variable 'top_left'
             top_left = matrix[top][left + i]
             # Move the bottom Left to the top left position
             matrix[top][left + i] = matrix[bottom - i][left]
@@ -52,3 +52,4 @@ def rotate_2d_matrix(matrix):
 
         right -= 1
         left += 1
+
