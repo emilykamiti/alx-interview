@@ -52,4 +52,3 @@ def rotate_2d_matrix(matrix):
 
         right -= 1
         left += 1
-
