@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def makeChange(coins, total):
     if total <= 0:
         return 0
@@ -9,7 +10,7 @@ def makeChange(coins, total):
 
     for coin in coins:
         for i in range(coin, total + 1):
-            if min_coins[i - coin] + 1 <min_coins[i]:
+            if min_coins[i - coin] + 1 < min_coins[i]:
                 min_coins[i] = min_coins[i - coin] + 1
 
     if min_coins[total] == float('inf'):
