@@ -14,8 +14,6 @@ def makeChange(coins, total):
              Returns 0 if the total is 0 or less.
              Returns -1 if the total cannot be met by any number of coins.
     """
-    
-
     if total <= 0:
         return 0
 
