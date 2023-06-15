@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Determine the fewest number of coins needed to meeet a given amount total"""
 
 
 def makeChange(coins, total):
@@ -24,11 +25,11 @@ def makeChange(coins, total):
     len_coins = len(coins)
 
     while(i < len_coins and cpy_total_amount > 0):
-        if (cpy_total_amount - coins[i] >= 0):
+        if (cpy_total_amount - coins[i]) >= 0:
             cpy_total_amount -= coins[i]
             num_coins += 1
         else:
             i += 1
 
     check = cpy_total_amount > 0 and num_coins > 0
-    return -1 if check or num_coins == 0 else num_coinsi
+    return -1 if check or num_coins == 0 else num_coins
