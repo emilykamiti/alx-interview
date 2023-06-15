@@ -15,6 +15,8 @@ def makeChange(coins, total):
         int: The fewest number of coins needed to meet the total.
              Returns 0 if the total is 0 or less.
              Returns -1 if the total cannot be met by any number of coins.
+
+    Author: KAMITI EMILY
     """
     if total <= 0:
         return 0
