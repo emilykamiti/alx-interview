@@ -5,12 +5,12 @@
 def island_perimeter(grid):
     """calculating the perimeter of the island os described in the grid."""
 
-    rows = len(grid)
-    cols = len(grid[0])
+    r = len(grid)
+    c = len(grid[0])
     perimeter = 0
 
-    for i in range(rows):
-        for j in range(cols):
+    for i in range(r):
+        for j in range(c):
             if grid[i][j] == 1:
                 perimeter += 4
 
