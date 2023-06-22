@@ -14,7 +14,7 @@ def island_perimeter(grid):
             if grid[i][j] == 1:
                 perimeter += 4
 
-                # check adjacent cells
+                # cells that are adjacent
                 if i > 0 and grid[i - 1][j] == 1:
                     perimeter -= 2
                 if j > 0 and grid[i][j - 1] == 1:
