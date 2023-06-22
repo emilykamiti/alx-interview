@@ -3,7 +3,7 @@
 
 
 def island_perimeter(grid):
-    """calculating the perimeter of the island os described in the grid."""
+    """calculating the perimeter of the island is described in the grid."""
 
     r = len(grid)
     c = len(grid[0])
