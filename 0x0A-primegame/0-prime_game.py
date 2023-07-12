@@ -29,7 +29,3 @@ def isWinner(x, nums):
         return 'Ben'
     else:
         return None
-
-
-result = isWinner(10000, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-print("Winner:", result)
