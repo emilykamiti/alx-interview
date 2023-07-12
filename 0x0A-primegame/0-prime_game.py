@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" Defines function that determines the winner """
 
 def isWinner(x, nums):
     """
