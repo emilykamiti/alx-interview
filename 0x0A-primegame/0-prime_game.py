@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def isWinner(x, nums):
 
     def is_prime(n):
@@ -9,7 +10,6 @@ def isWinner(x, nums):
             if n % i == 0:
                 return False
         return True
-
 
     if x <= 0 or not nums:
         return None
