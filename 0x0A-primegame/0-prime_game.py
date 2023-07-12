@@ -1,4 +1,7 @@
+#!/usr/bin/python3
+
 def isWinner(x, nums):
+
     def is_prime(n):
         if n < 2:
             return False
@@ -6,6 +9,7 @@ def isWinner(x, nums):
             if n % i == 0:
                 return False
         return True
+
 
     if x <= 0 or not nums:
         return None
@@ -25,6 +29,7 @@ def isWinner(x, nums):
         return 'Ben'
     else:
         return None
+
 
 result = isWinner(10000, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 print("Winner:", result)
