@@ -2,34 +2,39 @@
 
 
 def isWinner(x, nums):
+    """
+    Returns the winner of the prime game.
 
-    def is_prime(n):
-        if n < 2:
-            return False
-        for i in range(2, int(n ** 0.5) + 1):
-            if n % i == 0:
-                return False
-        return True
+    Args:
+        x: The number of numbers to consider.
+        nums: The list of numbers.
 
-    if x <= 0 or not nums:
+    Returns:
+        The winner of the game, or None if there is no winner.
+    """
+
+    if not nums or x < 1:
         return None
+    n = max(nums)
+    sieve = [True for _ in range(max(n + 1, 2))]
+    for i in range(2, int(pow(n, 0.5)) + 1):
+        if not sieve[i]:
+            continue
+        for j in range(i*i, n + 1, i):
+            sieve[j] = False
 
-    wins = {'Maria': 0, 'Ben': 0}
+    sieve[0] = sieve[1] = False
+    count = 0
+    for i in range(len(sieve)):
+        if sieve[i]:
+            count += 1
+        sieve[i] = count
 
+    player1 = 0
     for n in nums:
-        prime_count = sum(1 for i in range(1, n + 1) if is_prime(i))
-        if prime_count % 2 == 0:
-            wins['Maria'] += 1
-        else:
-            wins['Ben'] += 1
-
-    if wins['Maria'] > wins['Ben']:
-        return 'Maria'
-    elif wins['Maria'] < wins['Ben']:
-        return 'Ben'
-    else:
+        player1 += sieve[n] % 2 == 1
+    if player1 * 2 == len(nums):
         return None
-
-
-result = isWinner(10000, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-print("Winner:", result)
+    if player1 * 2 == len(nums):
+        return "Maria"  # Maria wins
+    return "Ben"  # Ben wins
