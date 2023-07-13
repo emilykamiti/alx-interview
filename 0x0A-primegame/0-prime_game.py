@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""The player that cannot make a move loses the game."""
 
 
 def isWinner(x, nums):
